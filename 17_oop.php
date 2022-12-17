@@ -39,17 +39,31 @@ class User {
 $user1 = new User('mark', 'mark@gmail.com', '60616');
 $user2 = new User('john', 'john@gmail.com', '567144');
 
-echo $user1->email;
-echo $user2->name;
+// echo $user1->email;
+// echo $user2->name;
 
 class Employee extends User {
     public function __construct($name, $email, $password, $title)
 
     {
-        parent::__construct($name, $email, $password);
+        parent::__construct($name, $email, $password, $title);
+        $this->name = $name;
+        $this->email = $email;
+        $this->password = $password;
         $this->title = $title;
     }
 
+    public function get_name() {
+        return $this->name;
+    }
+
+    public function get_email() {
+        return $this->email;
+    }
+
+    public function get_password() {
+        return $this->password;
+    }
     public function get_title() {
         return $this->title;
     }
@@ -57,6 +71,9 @@ class Employee extends User {
 
 $employee1 = new Employee('sarah', 'sarah@gmail.com', '454312', 'sarah store');
 
+echo $employee1->get_name();
+echo $employee1->get_email();
+echo $employee1->get_password();
 echo $employee1->get_title();
 // $user1->set_name('Mark');
 // $user2->set_name('John');
