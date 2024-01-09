@@ -14,6 +14,8 @@
   $_REQUEST - Contains information about variables passed through the form or URL.
 */
 
+
+//prevent from maliscious javascript code in the post or get method: htmlspecialchars($_GET['TARGET_STRING_NAME'])
 // var_dump($GLOBALS);
 // var_dump($_GET);
 // var_dump($_REQUEST);
